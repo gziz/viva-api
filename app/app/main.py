@@ -23,5 +23,6 @@ def analyze(request: Feedback):
     res = chain.run(feedback=feedback_str)
     try:
         res = json.loads(res)
+        return res
     except:
         return {"sentiment": "", "topic": [""]}
